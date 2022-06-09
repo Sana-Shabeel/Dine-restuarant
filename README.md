@@ -6,6 +6,10 @@ This project was a combination of 2 challenges. The UI is from [frontendmentor](
 
 ## Screenshots
 
+![homepage](./src/client/assets/images/home-preview.png)
+
+<img src="./src/client/assets/images/addmeal.png" alt="add meal page" width="400" height="300">
+
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
 ## Deployment <a name = "deployment"></a>

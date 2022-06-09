@@ -1,0 +1,100 @@
+.locally {
+  max-width: 100%;
+  margin-top: 5%;
+
+  background: url("../../assets/patterns/pattern-curve-top-left.svg") no-repeat;
+  background-position: bottom right;
+
+  @media screen and (max-width: 820px) {
+    background-position: 300px 80%;
+    background-size: contain;
+  }
+}
+
+.locally-sourced {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+
+  .locally-sourced__info {
+    width: 28rem;
+    h2 {
+      margin: 2rem 0;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding-inline: 5%;
+    gap: 1rem;
+  }
+
+  @media screen and (max-width: 820px) {
+    width: 35.81rem;
+    flex-direction: column-reverse;
+    padding: 0;
+    margin-inline: auto;
+
+    .locally-sourced__info {
+      width: fit-content;
+      text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 620px) {
+    width: 90%;
+
+    .locally-sourced__info {
+      h2 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+.locally-sourced__img {
+  width: 33.75rem; // 540px
+  height: 45rem; // 720px
+  position: relative;
+  margin-bottom: -100px;
+
+  background: url("../../assets/homepage/locally-sourced-desktop.jpg");
+  filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5));
+
+
+  img {
+    position: absolute;
+    right: -10%;
+    top: 50%;
+  }
+
+  @media screen and (max-width: 820px) {
+    width: 100%;
+    height: 22.5rem;
+    margin-bottom: 0;
+
+    background: url("../../assets/homepage/locally-sourced-tablet.jpg");
+
+    img {
+      width: 20%;
+      right: -5%;
+      top: 60%;
+    }
+  }
+
+  @media screen and (max-width: 630px) {
+    img {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    background: url("../../assets/homepage/locally-sourced-mobile.jpg")
+      no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}

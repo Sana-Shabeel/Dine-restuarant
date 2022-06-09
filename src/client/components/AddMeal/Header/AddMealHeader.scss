@@ -1,0 +1,57 @@
+.meal-header {
+  height: 600px;
+  background: url("../../../assets/booking/hero-bg-desktop.jpg");
+  background-size: cover;
+  color: var(--clr-white);
+  display: flex;
+  flex-direction: column;
+  gap: 25%;
+  padding: 2rem 10%;
+
+  .large-heading-text {
+    font-size: 4.5rem;
+  }
+
+  .meal-header-cta {
+    width: 70%;
+    p {
+      width: 73%;
+    }
+    button {
+      margin-top: 1.3rem;
+    }
+
+    @media screen and (max-width: 1008px) {
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    background: url("../../../assets/booking/hero-bg-tablet.jpg");
+    gap: 20%;
+    padding: 2rem 3%;
+
+    .large-heading-text {
+      font-size: 4rem;
+      line-height: 4rem;
+    }
+
+    .meal-header-cta {
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      p {
+        margin: 0 auto;
+      }
+    }
+  }
+  @media screen and (max-width: 425px) {
+    background: url("../../../assets/booking/hero-bg-tablet.jpg");
+    gap: 20%;
+    align-items: center;
+
+    .meal-header-cta {
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+}

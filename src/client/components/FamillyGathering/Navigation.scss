@@ -1,0 +1,92 @@
+.nav {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5% 0; // temp
+
+  background: url("../../assets/patterns/pattern-curve-top-right.svg") no-repeat;
+  background-position: -200px 100px;
+
+  @media screen and (max-width: 820px) {
+    background: url("../../assets/patterns/pattern-curve-top-right.svg")
+      no-repeat;
+    background-position: -500px -6%;
+    background-size: contain;
+  }
+}
+
+.nav__content {
+  width: 83%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media screen and (max-width: 1024px) {
+    width: 97%;
+  }
+
+  @media screen and (max-width: 820px) {
+    flex-direction: column;
+  }
+}
+
+// Image
+.nav__content-img {
+  max-width: 540px;
+  flex-basis: 540px;
+  height: 600px;
+  background: url("../../assets/homepage/family-gathering-desktop.jpg");
+  filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5));
+  position: relative;
+
+  img {
+    margin-top: -7%;
+    margin-left: -10%;
+  }
+
+  @media screen and (max-width: 820px) {
+    width: 100%;
+    flex-basis: 360px;
+    height: 360px;
+    background: url("../../assets/homepage/family-gathering-tablet.jpg")
+      no-repeat;
+  }
+}
+
+// info section
+.nav__content-info {
+  width: 570px;
+  height: 468px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .nav-info {
+    width: 445px;
+    align-self: flex-end;
+
+    p {
+      margin: 1.4rem 0;
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    .nav-info {
+      width: 400px;
+    }
+  }
+  @media screen and (max-width: 820px) {
+    .nav-info {
+      align-self: center;
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+    height: auto;
+    width: 100%;
+  }
+  @media screen and (max-width: 500px) {
+    .nav-info {
+      width: 100%;
+    }
+  }
+}

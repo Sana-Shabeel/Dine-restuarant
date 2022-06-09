@@ -1,0 +1,82 @@
+.app__article1 {
+  width: 100%;
+  height: 45rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  background: url("../../assets/patterns/pattern-curve-top-right.svg") no-repeat;
+  background-position: left;
+
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem auto;
+  }
+  @media screen and (max-width: 768px) {
+    width: min(100% - 22%);
+    background: none;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 100%;
+    .app__article1-description {
+      position: relative;
+      top: 15%;
+      width: 100%;
+    }
+  }
+}
+
+.app__article1-pattern-img {
+  width: 33.75rem;
+  height: 45rem;
+  background: url("../../assets/homepage/enjoyable-place-desktop.jpg");
+  position: absolute;
+  left: 10%;
+  top: -18%;
+
+  @media screen and (max-width: 1024px) {
+    width: 28.125rem;
+    height: 45rem;
+    left: 10%;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 35.812rem;
+    height: 22.5rem;
+    top: -10%;
+    left: 5%;
+
+    background: url("../../assets/homepage/enjoyable-place-tablet.jpg")
+      no-repeat;
+    background-size: cover;
+  }
+  @media screen and (max-width: 500px) {
+    width: 25.812rem;
+    background: url("../../assets/homepage/enjoyable-place-mobile.jpg")
+      no-repeat;
+    background-size: cover;
+
+    position: relative;
+    left: 0;
+    top: 0;
+  }
+}
+
+.app__article1-description {
+  width: 27.81rem;
+  position: relative;
+  right: -27%;
+
+  .head-L-text {
+    padding: 2rem 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    text-align: center;
+    left: 0;
+    margin-top: 25%;
+  }
+}

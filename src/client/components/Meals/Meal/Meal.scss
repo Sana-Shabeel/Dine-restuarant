@@ -1,0 +1,77 @@
+.all-meals-container {
+  width: min(100% - 2rem, 1440px);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 320px);
+  justify-content: center;
+  gap: 50px 35px;
+  margin: 1rem auto;
+}
+
+// MEAL HEADER
+
+.meal__header {
+  h2 {
+    font-size: 1.3rem;
+    line-height: 1.3rem;
+  }
+  p {
+    align-self: flex-end;
+  }
+}
+
+.meal-container {
+  //   width: 370px;
+
+  .logo {
+    width: 30%;
+    margin-inline: auto;
+    background: #fff;
+    position: relative;
+    top: 1.2rem;
+    display: grid;
+    place-items: center;
+    border-radius: 15px;
+  }
+
+  .meal-content {
+    background: #2c3844;
+    padding: 2rem 10px 1rem;
+    border-radius: 10px;
+    color: #ffffffde;
+  }
+}
+
+.app__flex {
+  justify-content: space-between;
+}
+
+.meal__description {
+  p {
+    height: 5rem;
+    font-size: 1.2rem;
+    line-height: 1.3rem;
+    font-weight: 300;
+    margin: 1rem 0;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+}
+
+// footer
+.meal__footer {
+  .app__flex {
+    gap: 5px;
+    cursor: pointer;
+
+    svg {
+      font-size: 1.2rem;
+    }
+    p {
+      align-self: flex-end;
+    }
+  }
+}

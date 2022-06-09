@@ -1,0 +1,62 @@
+.meals-header {
+  height: 50vh;
+  background: url("../../../assets/homepage/hero-bg-desktop@2x.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+
+  @media screen and (max-width: 475px) {
+    height: 55vh;
+  }
+}
+
+.meals-wrapper {
+  width: 75%;
+  margin: 4% auto;
+
+  .meals__logo {
+    margin-bottom: 6%;
+  }
+
+  .meals-info {
+    p {
+      margin-top: 1rem;
+      width: 60%;
+    }
+  }
+
+  @media screen and (max-width: 999px) {
+    .meals-info {
+      p {
+        width: 75%;
+      }
+    }
+  }
+  @media screen and (max-width: 769px) {
+    width: 90%;
+    margin-inline: auto;
+    text-align: center;
+    .meals__logo {
+      margin-bottom: 10%;
+    }
+    .meals-info {
+      .text-large {
+        font-size: 2.1rem;
+      }
+      p {
+        width: 80%;
+        margin-inline: auto;
+      }
+    }
+  }
+  @media screen and (max-width: 999px) {
+    .meals-info {
+      p {
+        width: 97%;
+        margin-inline: auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,188 @@
+.highlights {
+  max-width: 100%;
+  height: 761px;
+  display: grid;
+  place-items: center;
+  background: #111;
+  color: var(--clr-white);
+  margin: 2rem 0;
+
+  @media screen and (max-width: 570px) {
+    height: auto;
+    padding: 3rem 0;
+  }
+}
+
+.highlights-content {
+  display: flex;
+  justify-content: space-evenly;
+
+  .highlights-content__info {
+    width: 37%;
+    height: 213px;
+    h2 {
+      margin: 2rem 0;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+
+    .highlights-content__info {
+      width: 66%;
+      height: auto;
+      margin: 0 auto;
+      text-align: center;
+
+      h2 {
+        font-size: 2rem;
+        margin: 1rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 515px) {
+    .highlights-content__info {
+      width: 90%;
+    }
+  }
+}
+
+// Highlighted meals
+.highlights-meals-container {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .divider-icon {
+    width: 100%;
+    height: 1px;
+    margin: 10px 0;
+
+    background: url("../../assets/icons/icon-minus.svg");
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 70%;
+    margin-top: 5%;
+    margin-inline: auto;
+  }
+
+  @media screen and (max-width: 570px) {
+    width: 90%;
+  }
+}
+
+.highlight-meals {
+  display: flex;
+  gap: 5px;
+
+  .highlight-meals__imgs {
+    width: 162px;
+    height: 96px;
+    display: flex;
+
+    .salmon {
+      width: 80%;
+      background: url("../../assets/homepage/salmon-desktop-tablet@2x.jpg");
+      background-position: center;
+      background-size: cover;
+    }
+    .rosemary {
+      width: 80%;
+      background: url("../../assets/homepage/beef-desktop-tablet@2x.jpg");
+      background-position: center;
+      background-size: cover;
+    }
+    .summer {
+      width: 80%;
+      background: url("../../assets/homepage/chocolate-desktop-tablet@2x.jpg");
+      background-position: center;
+      background-size: cover;
+    }
+
+    .meal-line {
+      width: 20%;
+      height: 2px;
+      margin-top: 1rem;
+      background: url("../../assets/icons/icon-minus.svg") no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  .highlight-meals__info {
+    width: 350px;
+    height: 82px;
+    h2 {
+      text-transform: capitalize;
+      margin-bottom: 10px;
+    }
+    p {
+      line-height: 1.2rem;
+      letter-spacing: 1px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    justify-content: space-between;
+
+    .highlight-meals__info {
+      width: 70%;
+      h2 {
+        margin-bottom: 10px;
+      }
+      p {
+        font-size: 1rem;
+        line-height: 1rem;
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 570px) {
+    flex-direction: column;
+
+    .highlight-meals__imgs {
+      width: 100%;
+      height: 245px;
+      margin: 1rem 0;
+
+      .salmon {
+        width: 100%;
+        height: auto;
+        background: url("../../assets/homepage/salmon-mobile@2x.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+      .rosemary {
+        width: 100%;
+        height: auto;
+        background: url("../../assets/homepage/beef-mobile.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+      .summer {
+        width: 100%;
+        height: auto;
+        background: url("../../assets/homepage/chocolate-mobile.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+      .meal-line {
+        display: none;
+      }
+    }
+
+    .highlight-meals__info {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}

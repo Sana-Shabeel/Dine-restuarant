@@ -1,0 +1,59 @@
+.app__article2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 2rem 0;
+  padding: 0 1rem;
+
+  background: url("../../assets/patterns/pattern-curve-top-left.svg") no-repeat;
+  background-position: right;
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column-reverse;
+    background: none;
+  }
+}
+
+.app__article2-discription {
+  width: 50ch;
+
+  h2 {
+    margin: 1.6rem 0;
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: 40ch;
+  }
+}
+
+.app__article2-bgImg {
+  width: 33.75rem;
+  height: 720px;
+
+  background: url("../../assets/homepage/locally-sourced-desktop.jpg");
+
+  position: relative;
+
+  img {
+    position: absolute;
+    right: -15%;
+    bottom: 50%;
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: 28.125rem;
+
+    img {
+      right: -10%;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    width: 35.81rem;
+    height: 22.5rem;
+
+    background: url("../../assets/homepage/locally-sourced-tablet.jpg");
+
+    margin: 1rem 0;
+  }
+}

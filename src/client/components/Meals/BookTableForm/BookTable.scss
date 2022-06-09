@@ -1,0 +1,28 @@
+.bkf-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: url("../../../assets/patterns/pattern-curve-bottom-right.svg")
+    no-repeat;
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+}
+
+.book-table-form {
+  width: 540px;
+  height: auto;
+  background: #ffffff;
+  padding: 1.5rem 2rem;
+  box-shadow: -1px 19px 130px -46px rgba(0, 0, 0, 0.37);
+
+  @media screen and (max-width: 568px) {
+    width: 90%;
+    left: 0;
+  }
+}

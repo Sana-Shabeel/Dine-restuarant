@@ -60,7 +60,7 @@ function BookTable() {
         hideDeleteBtn
       />
       <Link to={"/meals"}>
-        <h2 className="text-large">dine</h2>
+        <h2 className="text-large logo-meal">dine</h2>
       </Link>
       <BookTableForm getData={getDataHandler} />
     </div>

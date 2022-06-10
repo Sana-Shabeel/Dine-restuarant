@@ -8,6 +8,7 @@ function Modal({
   message,
   deleteMeal,
   mealId,
+  hideDeleteBtn = false,
 }) {
   return (
     <>
@@ -23,15 +24,6 @@ function Modal({
             <h2 className="text-large">{title}</h2>
             <p className="p-text">{message}</p>
 
-            {/* <Button
-              class="whiteBg"
-              title="cancel"
-              onClick={(e) => {
-                console.log("child2");
-                setShowModal((prev) => !prev);
-              }}
-            /> */}
-
             <button
               className="whiteBg"
               onClick={(e) => {
@@ -42,16 +34,18 @@ function Modal({
               Cancel
             </button>
 
-            <button
-              className="red-btn"
-              onClick={(e) => {
-                e.stopPropagation();
-                deleteMeal(mealId);
-                setShowModal((prev) => !prev);
-              }}
-            >
-              Delete
-            </button>
+            {!hideDeleteBtn && (
+              <button
+                className="red-btn"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  deleteMeal(mealId);
+                  setShowModal((prev) => !prev);
+                }}
+              >
+                Delete
+              </button>
+            )}
           </div>
         </div>
       ) : null}

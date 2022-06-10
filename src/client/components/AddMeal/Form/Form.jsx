@@ -5,21 +5,37 @@ import NumberInput from "./NumberInput";
 
 function Form() {
   const [mealData, setMealData] = useState();
-  const [price, setPrice] = useState();
-  // const [serving, setServing] = useState();
+  // const [increment, setIncrement] = useState(0);
+  const [price, setPrice] = useState(0);
+  const [serving, setServing] = useState(0);
 
   const changeHandler = (e) => {
     const value = e.target.value;
     setMealData({
       ...mealData,
       [e.target.name]: value,
-      price: 200,
-      max_reservation: 12,
+    });
+  };
+
+  const priceChangeHandler = (price) => {
+    setPrice(price);
+    setMealData({
+      ...mealData,
+      price: price,
+    });
+  };
+  const reservationsChangeHandler = (serving) => {
+    setServing(serving);
+    setMealData({
+      ...mealData,
+      max_reservation: serving,
     });
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
+
+    console.log(mealData);
 
     fetch("api/meals", {
       method: "POST",
@@ -68,8 +84,16 @@ function Form() {
             ></textarea>
           </div>
 
-          <NumberInput placeholder="Servings" setPrice={setPrice} />
-          <NumberInput placeholder="Price" />
+          <NumberInput
+            placeholder="Servings"
+            setIncrement={reservationsChangeHandler}
+            increment={serving}
+          />
+          <NumberInput
+            placeholder="Price"
+            setIncrement={priceChangeHandler}
+            increment={price}
+          />
 
           <div className="btn-container">
             <button

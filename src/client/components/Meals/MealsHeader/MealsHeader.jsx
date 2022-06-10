@@ -18,6 +18,9 @@ function MealsHeader() {
             with others we’ll look after you. We’ll be sure to mark your special
             date with an unforgettable meal.
           </p>
+          <Link to="/addmeal">
+            <button className="blackBg">ADD A NEW MEAL</button>
+          </Link>
         </div>
       </div>
     </div>

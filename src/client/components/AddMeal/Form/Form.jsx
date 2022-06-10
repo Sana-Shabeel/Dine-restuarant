@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import patterns from "../../../assets/patterns/pattern-lines.svg";
+import Modal from "../../Modal/Modal";
 import "./Form.scss";
 import NumberInput from "./NumberInput";
 
 function Form() {
   const [mealData, setMealData] = useState();
-  // const [increment, setIncrement] = useState(0);
+  const [modalMessage, setModalMessage] = useState({
+    title: "",
+    message: "",
+  });
+  const [showModal, setShowModal] = useState(false);
   const [price, setPrice] = useState(0);
   const [serving, setServing] = useState(0);
 
@@ -47,11 +52,32 @@ function Form() {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+        setModalMessage({
+          title: "Success",
+          message: `Your request has been successfully submitted`,
+        });
+        setShowModal(true);
+      })
+      .catch((error) => {
+        console.log(error);
+        console.log(error);
+        setModalMessage({
+          title: "FAILED",
+          message: `Could not send to database. Please make sure all the required fields are filled`,
+        });
+        setShowModal(true);
       });
   };
 
   return (
     <div className="form-container">
+      <Modal
+        showModal={showModal}
+        setShowModal={setShowModal}
+        title={modalMessage.title}
+        message={modalMessage.message}
+        hideDeleteBtn
+      />
       <img className="hidden" src={patterns} alt="lines" />
       <div className="form">
         <form>

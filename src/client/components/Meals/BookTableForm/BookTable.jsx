@@ -1,44 +1,70 @@
-import React, { useState } from "react";
-import "../../AddMeal/Form/Form.scss";
-import "./BookTable.scss";
-import NumberInput from "../../AddMeal/Form/NumberInput";
+import React, { useState, useEffect } from "react";
 import Modal from "../../Modal/Modal";
+import { Link, useParams } from "react-router-dom";
+import BookTableForm from "./BookTableForm";
 
-function BookTableForm() {
+function BookTable() {
   const [showModal, setShowModal] = useState(false);
+  const [modalMessage, setModalMessage] = useState({
+    title: "",
+    message: "",
+  });
+  const params = useParams();
 
-  const openModal = (e) => {
-    e.stopPropagation();
-    setShowModal((prev) => !prev);
+  const getDataHandler = (inputValues) => {
+    postData({
+      meal_id: params.mealId,
+      number_of_guests: Number(inputValues.number_of_guests),
+      contact_phonenumber: Number(inputValues.contact_phonenumber),
+      contact_name: inputValues.contact_name,
+      contact_email: inputValues.contact_email,
+    });
   };
+
+  const postData = (reservation) => {
+    console.log(reservation);
+    fetch("/api/reservations", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(reservation),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setModalMessage({
+          title: "Success",
+          message: `Reservation succesfully made for ${reservation.contact_name}`,
+        });
+        setShowModal(true);
+      })
+      .catch((error) => {
+        console.log(error);
+        console.log(error);
+        setModalMessage({
+          title: "FAILED",
+          message: `Could not send to database. Please make sure all the required fields are filled`,
+        });
+        setShowModal(true);
+      });
+  };
+  console.log(modalMessage);
   return (
-    <div className="bkf-container">
-      <h1 className="text-large">Book a table</h1>
-      <Modal showModal={showModal} setShowModal={setShowModal} />
-
-      <div className="book-table-form">
-        <form>
-          <div className="form__name">
-            <input type="text" placeholder="Full name" required />
-          </div>
-          <div className="form__email">
-            <input type="text" placeholder="Email" required />
-          </div>
-          <div className="form__email">
-            <input type="number" placeholder="Phone" required />
-          </div>
-
-          <NumberInput placeholder="Number of guests" />
-
-          <div className="btn-container">
-            <button type="submit" className="btn-submit" onClick={openModal}>
-              BOOK TABLE
-            </button>
-          </div>
-        </form>
-      </div>
+    <div className="booking-container">
+      <Modal
+        showModal={showModal}
+        setShowModal={setShowModal}
+        title={modalMessage.title}
+        message={modalMessage.message}
+        hideDeleteBtn
+      />
+      <Link to={"/meals"}>
+        <h2 className="text-large">dine</h2>
+      </Link>
+      <BookTableForm getData={getDataHandler} />
     </div>
   );
 }
 
-export default BookTableForm;
+export default BookTable;

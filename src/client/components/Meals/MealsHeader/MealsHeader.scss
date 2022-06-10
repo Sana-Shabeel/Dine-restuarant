@@ -1,5 +1,5 @@
 .meals-header {
-  height: 50vh;
+  height: 51vh;
   background: url("../../../assets/homepage/hero-bg-desktop@2x.jpg") no-repeat;
   background-size: cover;
   background-position: center;
@@ -8,7 +8,7 @@
   display: flex;
 
   @media screen and (max-width: 475px) {
-    height: 55vh;
+    height: 65vh;
   }
 }
 
@@ -22,7 +22,7 @@
 
   .meals-info {
     p {
-      margin-top: 1rem;
+      margin: 1.3rem 0;
       width: 60%;
     }
   }

@@ -14,7 +14,9 @@ This project was a combination of 2 challenges. The UI is from [frontendmentor](
 
 ## Deployment <a name = "deployment"></a>
 
-This app was deployed on heroku.
+This app was deployed on heroku so it might take some time to load.
+
+Link: [Heroku](https://dine-restuarant.herokuapp.com/)
 
 ### Installing
 
